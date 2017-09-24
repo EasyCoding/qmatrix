@@ -38,7 +38,7 @@ protocol in development.
 
 %files
 %license COPYING
-%doc README.md CONTRIBUTING.md
+%doc README.md
 %{_bindir}/%{name}
 
 %changelog
