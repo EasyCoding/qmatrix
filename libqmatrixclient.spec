@@ -50,10 +50,11 @@ ln -s %{name}.so.%{sover} "%{buildroot}%{_libdir}/%{name}.so"
 
 # Installing additional development files...
 mkdir -p "%{buildroot}%{_includedir}/%{name}/events"
-mkdir -p "%{buildroot}%{_includedir}/%{name}/jobs"
+mkdir -p "%{buildroot}%{_includedir}/%{name}/jobs/generated"
 find . -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}' %{buildroot}%{_includedir}/%{name} \;
 find events -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}' %{buildroot}%{_includedir}/%{name}/events \;
 find jobs -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}' %{buildroot}%{_includedir}/%{name}/jobs \;
+find jobs/generated -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}' %{buildroot}%{_includedir}/%{name}/jobs/generated \;
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
