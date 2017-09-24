@@ -69,3 +69,5 @@ find jobs -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}' %{buildr
 %{_libdir}/%{name}.so
 
 %changelog
+* Sun Sep 24 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20170922gitae59271
+- Initial SPEC release.
