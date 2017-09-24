@@ -2,9 +2,6 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global date 20170922
 
-%global commit1 ae59271da3a199eb936aa709893ef592cd51f172
-%global shortcommit1 %(c=%{commit1}; echo ${c:0:7})
-
 Summary: Cross-platform desktop IM client for the Matrix protocol
 Name: quaternion
 Version: 0.0.1
@@ -14,9 +11,9 @@ License: GPLv3+
 URL: https://github.com/QMatrixClient/Quaternion
 
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Source1: https://github.com/QMatrixClient/libqmatrixclient/archive/%{commit0}.tar.gz#/libqmatrixclient-%{shortcommit1}.tar.gz
+Patch0: 0001-Unbundle-libqmatrixclient-library.patch
 
-#BuildRequires: libqmatrixclient-devel
+BuildRequires: libqmatrixclient-devel
 BuildRequires: pkgconfig(Qt5Quick)
 BuildRequires: qt5-qtbase-devel
 BuildRequires: gcc-c++
@@ -30,10 +27,9 @@ protocol in development.
 %prep
 %autosetup -n Quaternion-%{commit0} -p1
 
-# Unpacking bundled libqmatrixclient...
+# Removing bundled library and using packaged version...
 rm -rf lib
-tar -xf %{SOURCE1}
-mv libqmatrixclient-%{commit1} lib
+ln -s %{_includedir}/libqmatrixclient lib
 
 %build
 %cmake .
