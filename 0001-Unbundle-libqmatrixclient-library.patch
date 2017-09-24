@@ -1,0 +1,26 @@
+From b83d08443bf2648858e3b6aa70dfd35acfea6e0f Mon Sep 17 00:00:00 2001
+From: Vitaly Zaitsev <vitaly@easycoding.org>
+Date: Sun, 24 Sep 2017 17:05:27 +0200
+Subject: [PATCH] Unbundle libqmatrixclient library.
+
+---
+ CMakeLists.txt | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index cdb0d74..64f5c78 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -58,8 +58,7 @@ message( STATUS "Quaternion install prefix: ${CMAKE_INSTALL_PREFIX}" )
+ message( STATUS "=============================================================================" )
+ message( STATUS )
+ 
+-add_subdirectory(lib)
+-include_directories(lib)
++include_directories("${INCLUDE_INSTALL_DIR}/libqmatrixclient")
+ 
+ # Set up source files
+ set(quaternion_SRCS
+-- 
+2.13.5
+
