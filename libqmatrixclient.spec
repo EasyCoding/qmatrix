@@ -15,7 +15,6 @@ URL: https://github.com/QMatrixClient/%{name}
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: qt5-qtbase-devel
-BuildRequires: openssl-devel
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
