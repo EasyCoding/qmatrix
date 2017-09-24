@@ -9,7 +9,7 @@ Name: libqmatrixclient
 Version: 0
 Release: 1.%{date}git%{shortcommit0}%{?dist}
 
-License: LGPL2.1
+License: LGPLv2.1
 URL: https://github.com/QMatrixClient/%{name}
 
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
