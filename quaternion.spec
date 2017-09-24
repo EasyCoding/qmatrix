@@ -4,7 +4,7 @@
 
 Summary: Cross-platform desktop IM client for the Matrix protocol
 Name: quaternion
-Version: 0
+Version: 0.0.1
 Release: 1.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
