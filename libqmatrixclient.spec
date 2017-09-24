@@ -1,3 +1,5 @@
+%global sover 0.0.0
+
 %global commit0 ae59271da3a199eb936aa709893ef592cd51f172
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global date 20170922
@@ -12,6 +14,8 @@ URL: https://github.com/QMatrixClient/%{name}
 
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
+BuildRequires: qt5-qtbase-devel
+BuildRequires: openssl-devel
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
@@ -39,7 +43,18 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %make_build
 
 %install
-%make_install
+# Installing shared libraries...
+mkdir -p "%{buildroot}%{_libdir}"
+install -m 0755 -p %{name}.so.%{sover} "%{buildroot}%{_libdir}/%{name}.so.%{sover}"
+ln -s %{name}.so.%{sover} "%{buildroot}%{_libdir}/%{name}.so.0"
+ln -s %{name}.so.%{sover} "%{buildroot}%{_libdir}/%{name}.so"
+
+# Installing additional development files...
+mkdir -p "%{buildroot}%{_includedir}/%{name}/events"
+mkdir -p "%{buildroot}%{_includedir}/%{name}/jobs"
+find . -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}' %{buildroot}%{_includedir}/%{name} \;
+find events -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}' %{buildroot}%{_includedir}/%{name}/events \;
+find jobs -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}' %{buildroot}%{_includedir}/%{name}/jobs \;
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
