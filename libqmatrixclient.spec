@@ -1,8 +1,8 @@
 %global sover 0.0.0
 
-%global commit0 f2f85ba093df5dcd991fd206af4d79d57f4c7fc8
+%global commit0 34faa56649f04fafd6ace276ba186070f41901be
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20171017
+%global date 20171020
 
 Summary: Qt-based library to make IM clients for the Matrix protocol
 Name: libqmatrixclient
