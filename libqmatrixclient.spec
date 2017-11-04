@@ -1,4 +1,4 @@
-%global sover 0.0.0
+%global sover 0.1.0
 
 %global commit0 5bafd65538a877e8f186fc44d03d4b2c705820f3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
