@@ -1,6 +1,6 @@
-%global commit0 9cdc1bf30cc4c395bcdf7932f0af34f11ac622c7
+%global commit0 3976b4dba7978703a6ad3108b21c1467fd1b80c0
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20171019
+%global date 20171103
 
 Summary: Cross-platform desktop IM client for the Matrix protocol
 Name: quaternion
