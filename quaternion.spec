@@ -5,7 +5,7 @@
 Summary: Cross-platform desktop IM client for the Matrix protocol
 Name: quaternion
 Version: 0.0.1
-Release: 3.%{date}git%{shortcommit0}%{?dist}
+Release: 4.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://github.com/QMatrixClient/Quaternion
@@ -58,6 +58,9 @@ fi
 %{_datadir}/icons/hicolor/*/apps/%{name}.*
 
 %changelog
+* Sat Nov 04 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.1-4.20171103git3976b4d
+- Updated to latest snapshot.
+
 * Thu Oct 19 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.1-3.20171019git9cdc1bf
 - Updated to latest snapshot.
 
