@@ -7,7 +7,7 @@
 Summary: Qt-based library to make IM clients for the Matrix protocol
 Name: libqmatrixclient
 Version: 0
-Release: 4.%{date}git%{shortcommit0}%{?dist}
+Release: 5.%{date}git%{shortcommit0}%{?dist}
 
 License: LGPLv2.1
 URL: https://github.com/QMatrixClient/%{name}
@@ -69,6 +69,9 @@ find jobs/generated -maxdepth 1 -type f -name "*.h" -exec install -m 0644 -p '{}
 %{_libdir}/%{name}.so
 
 %changelog
+* Fri Nov 10 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0-5.20171110git92ede10
+- Updated to latest snapshot.
+
 * Sat Nov 04 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0-4.20171103git5bafd65
 - Updated to latest snapshot.
 
