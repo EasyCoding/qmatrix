@@ -58,6 +58,9 @@ fi
 %{_datadir}/icons/hicolor/*/apps/%{name}.*
 
 %changelog
+* Fri Nov 10 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.4-1.20171110git8502c54
+- Updated to version 0.0.4 (snapshot).
+
 * Sat Nov 04 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.1-4.20171103git3976b4d
 - Updated to latest snapshot.
 
