@@ -45,6 +45,7 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 # Installing shared libraries...
 mkdir -p "%{buildroot}%{_libdir}"
 install -m 0755 -p %{name}.so.%{sover} "%{buildroot}%{_libdir}/%{name}.so.%{sover}"
+ln -s %{name}.so.%{sover} "%{buildroot}%{_libdir}/%{name}.so.0.1"
 ln -s %{name}.so.%{sover} "%{buildroot}%{_libdir}/%{name}.so.0"
 ln -s %{name}.so.%{sover} "%{buildroot}%{_libdir}/%{name}.so"
 
