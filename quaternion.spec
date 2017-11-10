@@ -1,11 +1,11 @@
-%global commit0 3976b4dba7978703a6ad3108b21c1467fd1b80c0
+%global commit0 8502c5440d8fc10791c99b78af0301931ac816f4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20171103
+%global date 20171110
 
 Summary: Cross-platform desktop IM client for the Matrix protocol
 Name: quaternion
-Version: 0.0.1
-Release: 4.%{date}git%{shortcommit0}%{?dist}
+Version: 0.0.4
+Release: 1.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://github.com/QMatrixClient/Quaternion
