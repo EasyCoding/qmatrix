@@ -30,6 +30,7 @@ BuildRequires: cmake(Qt5LinguistTools)
 
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
+BuildRequires: libquotient-devel
 BuildRequires: libqtolm-devel
 BuildRequires: libolm-devel
 BuildRequires: cmark-devel
