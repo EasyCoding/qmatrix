@@ -4,14 +4,19 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global date 20190817
 
+# Git revision of SortFilterProxyModel...
+%global commit1 770789ee484abf69c230cbf1b64f39823e79a181
+%global shortcommit1 %(c=%{commit1}; echo ${c:0:7})
+
 Name: spectral
 Summary: A glossy cross-platform Matrix client
 Version: 0
 Release: 0.1.%{date}git%{shortcommit0}%{?dist}
 
-License: LGPLv2.1
+License: GPLv3+
 URL: https://gitlab.com/b0/%{name}
 Source0: %{url}/-/archive/%{commit0}.tar.gz/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/oKcerG/SortFilterProxyModel/archive/%{commit1}.tar.gz#/SortFilterProxyModel-%{shortcommit1}.tar.gz
 
 BuildRequires: cmake(Qt5Svg)
 BuildRequires: cmake(Qt5DBus)
@@ -33,6 +38,7 @@ BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
 
+Provides: bundled(SortFilterProxyModel) = 0.1.1~git%{shortcommit1}
 Requires: hicolor-icon-theme
 
 %description
@@ -43,17 +49,25 @@ communication protocol for instant messaging.
 %autosetup -n %{name}-%{commit0}
 mkdir -p %{_target_platform}
 
+# Unpacking SortFilterProxyModel...
+pushd include
+    rm -rf SortFilterProxyModel
+    tar -xf %{SOURCE1}
+    mv SortFilterProxyModel-%{commit1} SortFilterProxyModel
+popd
+
 %build
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
+    -DGIT_SHA1=%{commit0} \
     ..
 popd
 %ninja_build -C %{_target_platform}
 
 %check
-appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.appdata.xml
-desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.appdata.xml
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %install
 %ninja_install -C %{_target_platform}
@@ -62,9 +76,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 %license LICENSE
 %doc README.md
 %{_bindir}/%{name}
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_metainfodir}/%{name}.appdata.xml
+%{_datadir}/applications/*.desktop
+%{_datadir}/icons/hicolor/*/apps/*.png
+%{_metainfodir}/*.appdata.xml
 
 %changelog
 * Sat Aug 17 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-0.1.20190817git3d8a3c7
