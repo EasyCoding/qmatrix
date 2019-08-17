@@ -1,0 +1,66 @@
+%global libname libQtOlm
+
+%global commit0 2c459a9320130416d09b655821935a25708e9afc
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global date 20190729
+
+Name: libqtolm
+Summary: A Qt wrapper for libolm
+Version: 0
+Release: 1.%{date}git%{shortcommit0}%{?dist}
+
+License: GPLv3+
+URL: https://gitlab.com/b0/libqtolm
+Source0: %{url}/-/archive/%{commit0}.tar.gz/%{name}-%{shortcommit0}.tar.gz
+
+BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5Network)
+BuildRequires: libolm-devel
+BuildRequires: ninja-build
+BuildRequires: gcc-c++
+BuildRequires: cmake
+BuildRequires: gcc
+
+%description
+Special Qt wrapper for libolm library.
+
+%package devel
+Summary: Development files for %{name}
+Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
+
+%description devel
+%{summary}.
+
+%prep
+%autosetup -n %{name}-%{commit0}
+mkdir -p %{_target_platform}
+
+%build
+pushd %{_target_platform}
+    %cmake -G Ninja \
+    -DCMAKE_BUILD_TYPE=Release \
+    ..
+popd
+%ninja_build -C %{_target_platform}
+
+%check
+pushd %{_target_platform}
+    ctest --output-on-failure
+popd
+
+%install
+%ninja_install -C %{_target_platform}
+
+%files
+%license LICENSE
+%{_libdir}/%{libname}.so.*
+
+%files devel
+%{_includedir}/*.h
+%{_libdir}/cmake/QtOlm
+%{_libdir}/pkgconfig/QtOlm.pc
+%{_libdir}/%{libname}.so
+
+%changelog
+* Sat Aug 17 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20190729git2c459a9
+- Initial SPEC release.
