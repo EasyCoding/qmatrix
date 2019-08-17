@@ -22,6 +22,7 @@ BuildRequires: cmake(Qt5Multimedia)
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5LinguistTools)
 
+BuildRequires: libqtolm-devel
 BuildRequires: libolm-devel
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
@@ -50,6 +51,7 @@ mkdir -p %{_target_platform}
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
+    -DQUOTIENT_INSTALL_EXAMPLE=OFF \
     ..
 popd
 %ninja_build -C %{_target_platform}
@@ -61,16 +63,18 @@ popd
 
 %install
 %ninja_install -C %{_target_platform}
+rm -rf %{buildroot}%{_datadir}/ndk-modules
 
 %files
 %license COPYING
 %doc README.md CONTRIBUTING.md SECURITY.md
-%{_libdir}/%{name}.so.*
+%{_libdir}/%{libname}.so.*
 
 %files devel
-%{_includedir}/%{name}
-%{_libdir}/pkgconfig/%{libname}.pc
-%{_libdir}/%{name}.so
+%{_includedir}/*
+%{_libdir}/pkgconfig/%{appname}.pc
+%{_libdir}/cmake/%{appname}
+%{_libdir}/%{libname}.so
 
 %changelog
 * Sat Aug 17 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0.5.2-0.1.20190816git8663c2e
