@@ -1,17 +1,26 @@
-libqmatrixclient [![COPR build](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/libqmatrixclient/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/libqmatrixclient/)
+libquotient [![COPR build](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/libquotient/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/libquotient/)
 ================
 
- * Package name:		*libqmatrixclient*.
+ * Package name:		*libquotient*.
  * Maintainer:			*Vitaly Zaitsev*.
  * Repository:			[COPR](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/).
  * Upstream status:		n/a.
- * Description:			Qt-based library to make IM clients for the Matrix protocol.
+ * Description:			A Qt5 library to write cross-platform clients for Matrix.
 
-quaternion  [![COPR build](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/quaternion/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/quaternion/)
+libqtolm [![COPR build](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/libqtolm/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/libqtolm/)
 ================
 
- * Package name:		*quaternion*.
+ * Package name:		*libqtolm*.
  * Maintainer:			*Vitaly Zaitsev*.
  * Repository:			[COPR](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/).
  * Upstream status:		n/a.
- * Description:			Cross-platform desktop IM client for the Matrix protocol.
+ * Description:			Special Qt wrapper for libolm library.
+
+spectral  [![COPR build](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/spectral/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/spectral/)
+================
+
+ * Package name:		*spectral*.
+ * Maintainer:			*Vitaly Zaitsev*.
+ * Repository:			[COPR](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/).
+ * Upstream status:		n/a.
+ * Description:			A glossy cross-platform Matrix client.
