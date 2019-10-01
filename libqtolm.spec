@@ -1,13 +1,13 @@
 %global libname libQtOlm
 
-%global commit0 2c459a9320130416d09b655821935a25708e9afc
+%global commit0 f2d8e235a4af0625fdedaaf727fef5d51293bf1b
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20190729
+%global date 20190930
 
 Name: libqtolm
 Summary: A Qt wrapper for libolm
 Version: 0
-Release: 1.%{date}git%{shortcommit0}%{?dist}
+Release: 2.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://gitlab.com/b0/libqtolm
@@ -62,5 +62,8 @@ popd
 %{_libdir}/%{libname}.so
 
 %changelog
+* Tue Oct 01 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-2.20190930gitf2d8e23
+- Updated to latest Git snapshot.
+
 * Sat Aug 17 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20190729git2c459a9
 - Initial SPEC release.
