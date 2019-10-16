@@ -1,14 +1,14 @@
 %global appname Quotient
 %global libname lib%{appname}
 
-%global commit0 f24007465236a94b51a85a06f7f88192b9771ab0
+%global commit0 88d69a360090f8c027746358c6625224673113bf
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20191001
+%global date 20191013
 
 Name: libquotient
 Summary: A Qt5 library to write cross-platform clients for Matrix
 Version: 0.5.2
-Release: 0.2.%{date}git%{shortcommit0}%{?dist}
+Release: 0.3.%{date}git%{shortcommit0}%{?dist}
 
 License: LGPLv2.1
 URL: https://github.com/quotient-im/%{libname}
@@ -77,6 +77,9 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
+* Wed Oct 16 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0.5.2-0.3.20191013git88d69a3
+- Updated to latest Git snapshot.
+
 * Tue Oct 01 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0.5.2-0.2.20191001gitf240074
 - Updated to latest Git snapshot.
 
