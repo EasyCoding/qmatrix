@@ -43,6 +43,7 @@ Provides: bundled(SortFilterProxyModel) = 0.1.1~git%{shortcommit1}
 Requires: hicolor-icon-theme
 
 Recommends: google-noto-emoji-color-fonts
+Recommends: google-noto-emoji-fonts
 Recommends: google-noto-sans-fonts
 Recommends: google-roboto-fonts
 
