@@ -42,6 +42,10 @@ BuildRequires: gcc
 Provides: bundled(SortFilterProxyModel) = 0.1.1~git%{shortcommit1}
 Requires: hicolor-icon-theme
 
+Recommends: google-noto-emoji-color-fonts
+Recommends: google-noto-sans-fonts
+Recommends: google-roboto-fonts
+
 %description
 Spectral is a glossy cross-platform client for Matrix, the decentralized
 communication protocol for instant messaging.
