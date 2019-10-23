@@ -2,8 +2,6 @@
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global date 20191015
 
-%global appname Quotient
-
 Name: quaternion
 Summary: Cross-platform desktop IM client for the Matrix protocol
 Version: 0.0.9.4
