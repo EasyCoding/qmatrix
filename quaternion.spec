@@ -25,6 +25,7 @@ BuildRequires: cmake(Qt5QuickControls2)
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 BuildRequires: libquotient-devel
+BuildRequires: libqtolm-devel
 BuildRequires: libolm-devel
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
