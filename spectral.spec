@@ -1,8 +1,8 @@
 %global appname Spectral
 
-%global commit0 c666ffbba5aeb4b26ffe119480db700fee88ac38
+%global commit0 04bb4b1e98aa1a7064a5783d05428f0bf2d214d4
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20191011
+%global date 20191020
 
 # Git revision of SortFilterProxyModel...
 %global commit1 770789ee484abf69c230cbf1b64f39823e79a181
@@ -11,7 +11,7 @@
 Name: spectral
 Summary: A glossy cross-platform Matrix client
 Version: 0
-Release: 3.%{date}git%{shortcommit0}%{?dist}
+Release: 4.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://gitlab.com/b0/%{name}
@@ -87,6 +87,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Wed Oct 23 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-4.20191020git04bb4b1
+- Updated to latest snapshot.
+
 * Wed Oct 16 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-3.20191011gitc666ffb
 - Updated to latest Git snapshot.
 
