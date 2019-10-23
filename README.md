@@ -24,3 +24,12 @@ spectral  [![COPR build](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/
  * Repository:			[COPR](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/).
  * Upstream status:		n/a.
  * Description:			A glossy cross-platform Matrix client.
+
+quaternion  [![COPR build](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/quaternion/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/package/quaternion/)
+================
+
+ * Package name:		*quaternion*.
+ * Maintainer:			*Vitaly Zaitsev*.
+ * Repository:			[COPR](https://copr.fedorainfracloud.org/coprs/xvitaly/matrix/).
+ * Upstream status:		n/a.
+ * Description:			Cross-platform desktop IM client for the Matrix protocol.
