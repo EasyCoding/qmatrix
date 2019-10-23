@@ -33,6 +33,7 @@ BuildRequires: cmake(Qt5Keychain)
 BuildRequires: cmake(Qt5Multimedia)
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires: cmake(Qt5QuickControls2)
 
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
