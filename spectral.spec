@@ -18,6 +18,12 @@ URL: https://gitlab.com/b0/%{name}
 Source0: %{url}/-/archive/%{commit0}.tar.gz/%{name}-%{shortcommit0}.tar.gz
 Source1: https://github.com/oKcerG/SortFilterProxyModel/archive/%{commit1}.tar.gz#/SortFilterProxyModel-%{shortcommit1}.tar.gz
 
+# https://gitlab.com/b0/spectral/merge_requests/66
+Patch0: spectral-qtquick2-linkage.patch
+
+# https://gitlab.com/b0/spectral/merge_requests/67
+Patch1: spectral-launcher-icon.patch
+
 BuildRequires: cmake(Qt5Svg)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Core)
@@ -52,7 +58,7 @@ Spectral is a glossy cross-platform client for Matrix, the decentralized
 communication protocol for instant messaging.
 
 %prep
-%autosetup -n %{name}-%{commit0}
+%autosetup -n %{name}-%{commit0} -p1
 mkdir -p %{_target_platform}
 
 # Unpacking SortFilterProxyModel...

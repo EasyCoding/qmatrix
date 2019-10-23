@@ -1,0 +1,25 @@
+From e3441609e7365e68de1cb328f4a5d41b70f3020c Mon Sep 17 00:00:00 2001
+From: Vitaly Zaitsev <vitaly@easycoding.org>
+Date: Fri, 18 Oct 2019 15:09:00 +0200
+Subject: [PATCH] Fixed issue with missing icon in GNU/Linux menu launchers.
+
+Signed-off-by: Vitaly Zaitsev <vitaly@easycoding.org>
+---
+ linux/org.eu.encom.spectral.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/linux/org.eu.encom.spectral.desktop b/linux/org.eu.encom.spectral.desktop
+index 0ae353f..114f299 100644
+--- a/linux/org.eu.encom.spectral.desktop
++++ b/linux/org.eu.encom.spectral.desktop
+@@ -4,7 +4,7 @@ GenericName=Matrix Client
+ Comment=IM client for the Matrix protocol
+ Exec=spectral
+ Terminal=false
+-Icon=org.eu.encom.spectral
++Icon=spectral
+ Type=Application
+ Categories=Network;InstantMessaging;
+ Name[en_US]=Spectral
+-- 
+2.22.0
