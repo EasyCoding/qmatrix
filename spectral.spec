@@ -34,10 +34,10 @@ BuildRequires: cmake(Qt5Multimedia)
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5QuickControls2)
+BuildRequires: cmake(Quotient) >= 0.6.0
 
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
-BuildRequires: libquotient-devel
 BuildRequires: libqtolm-devel
 BuildRequires: libolm-devel
 BuildRequires: cmark-devel
