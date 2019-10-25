@@ -13,9 +13,10 @@ License: GPLv3+
 URL: https://gitlab.com/b0/libqtolm
 Source0: %{url}/-/archive/%{commit0}.tar.gz/%{name}-%{shortcommit0}.tar.gz
 
+BuildRequires: cmake(Olm)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Network)
-BuildRequires: libolm-devel
+
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -64,6 +65,3 @@ popd
 %changelog
 * Tue Oct 01 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-2.20190930gitf2d8e23
 - Updated to latest Git snapshot.
-
-* Sat Aug 17 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20190729git2c459a9
-- Initial SPEC release.
