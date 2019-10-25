@@ -24,6 +24,8 @@ Patch0: spectral-qtquick2-linkage.patch
 # https://gitlab.com/b0/spectral/merge_requests/67
 Patch1: spectral-launcher-icon.patch
 
+BuildRequires: cmake(Olm)
+BuildRequires: cmake(QtOlm)
 BuildRequires: cmake(Qt5Svg)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Core)
@@ -35,12 +37,10 @@ BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5QuickControls2)
 BuildRequires: cmake(Quotient) >= 0.6.0
+BuildRequires: pkgconfig(libcmark)
 
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
-BuildRequires: libqtolm-devel
-BuildRequires: libolm-devel
-BuildRequires: cmark-devel
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
 BuildRequires: cmake
