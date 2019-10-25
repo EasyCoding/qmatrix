@@ -15,6 +15,8 @@ URL: https://github.com/quotient-im/%{libname}
 
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
+BuildRequires: cmake(Olm)
+BuildRequires: cmake(QtOlm)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Network)
@@ -22,8 +24,6 @@ BuildRequires: cmake(Qt5Multimedia)
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5LinguistTools)
 
-BuildRequires: libqtolm-devel
-BuildRequires: libolm-devel
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
 BuildRequires: cmake
