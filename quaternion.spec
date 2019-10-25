@@ -11,6 +11,8 @@ License: GPLv3+
 URL: https://github.com/quotient-im/Quaternion
 Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
+BuildRequires: cmake(Olm)
+BuildRequires: cmake(QtOlm)
 BuildRequires: cmake(Qt5Svg)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Core)
@@ -21,12 +23,10 @@ BuildRequires: cmake(Qt5Multimedia)
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5LinguistTools)
 BuildRequires: cmake(Qt5QuickControls2)
+BuildRequires: cmake(Quotient) >= 0.6.0
 
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
-BuildRequires: libquotient-devel
-BuildRequires: libqtolm-devel
-BuildRequires: libolm-devel
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
 BuildRequires: cmake
@@ -72,18 +72,3 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %changelog
 * Wed Oct 23 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.9.4-0.1.20191015gite56c41b
 - Updated to latest Git snapshot.
-
-* Fri Nov 10 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.4-1.20171110git8502c54
-- Updated to version 0.0.4 (snapshot).
-
-* Sat Nov 04 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.1-4.20171103git3976b4d
-- Updated to latest snapshot.
-
-* Thu Oct 19 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.1-3.20171019git9cdc1bf
-- Updated to latest snapshot.
-
-* Wed Oct 18 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.1-2.20171017gite191260
-- Updated to latest snapshot.
-
-* Sun Sep 24 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20170922gitdeeeaeb
-- Initial SPEC release.
