@@ -5,7 +5,7 @@
 Name: quaternion
 Summary: Cross-platform desktop IM client for the Matrix protocol
 Version: 0.0.9.4
-Release: 0.1.%{date}git%{shortcommit0}%{?dist}
+Release: 0.2.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://github.com/quotient-im/Quaternion
@@ -70,5 +70,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
-* Wed Oct 23 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.9.4-0.1.20191015gite56c41b
+* Fri Oct 25 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0.0.9.4-0.2.20191015gite56c41b
 - Updated to latest Git snapshot.

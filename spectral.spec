@@ -11,7 +11,7 @@
 Name: spectral
 Summary: A glossy cross-platform Matrix client
 Version: 0
-Release: 4.%{date}git%{shortcommit0}%{?dist}
+Release: 5.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://gitlab.com/b0/%{name}
@@ -94,14 +94,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
-* Wed Oct 23 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-4.20191020git04bb4b1
-- Updated to latest snapshot.
-
-* Wed Oct 16 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-3.20191011gitc666ffb
+* Fri Oct 25 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-5.20191020git04bb4b1
 - Updated to latest Git snapshot.
-
-* Tue Oct 01 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-2.20191001gitf8072a2
-- Updated to latest Git snapshot.
-
-* Sat Aug 17 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20190817git3d8a3c7
-- Initial SPEC release.
