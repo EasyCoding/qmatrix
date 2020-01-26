@@ -5,13 +5,13 @@
 %global date 20190930
 
 Name: libqtolm
-Summary: A Qt wrapper for libolm
+Summary: Qt wrapper for libolm
 Version: 0
 Release: 4.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://gitlab.com/b0/libqtolm
-Source0: %{url}/-/archive/%{commit0}.tar.gz/%{name}-%{shortcommit0}.tar.gz
+Source0: %{url}/-/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: cmake(Olm)
 BuildRequires: cmake(Qt5Core)
