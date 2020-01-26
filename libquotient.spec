@@ -6,14 +6,13 @@
 %global date 20200121
 
 Name: libquotient
-Summary: A Qt5 library to write cross-platform clients for Matrix
 Version: 0.6.0
 Release: 0.2.%{date}git%{shortcommit0}%{?dist}
 
 License: LGPLv2+
 URL: https://github.com/quotient-im/%{libname}
-
-Source0: %{url}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Summary: Qt5 library to write cross-platform clients for Matrix
+Source0: %{url}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires: cmake(Olm)
 BuildRequires: cmake(QtOlm)
@@ -30,11 +29,10 @@ BuildRequires: cmake
 BuildRequires: gcc
 
 %description
-The Quotient project aims to produce a Qt5-based SDK to develop
-applications for Matrix. libQuotient is a library that enables
-client applications. It is the backbone of Quaternion, Spectral
-and other projects. Versions 0.5.x and older use the previous
-name - libQMatrixClient.
+The Quotient project aims to produce a Qt5-based SDK to develop applications
+for Matrix. libQuotient is a library that enables client applications. It is
+the backbone of Quaternion, Spectral and other projects. Versions 0.5.x and
+older use the previous name - libQMatrixClient.
 
 %package devel
 Summary: Development files for %{name}
@@ -74,8 +72,8 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 
 %files devel
 %{_includedir}/%{appname}/
+%{_libdir}/cmake/%{appname}/
 %{_libdir}/pkgconfig/%{appname}.pc
-%{_libdir}/cmake/%{appname}
 %{_libdir}/%{libname}.so
 
 %changelog
