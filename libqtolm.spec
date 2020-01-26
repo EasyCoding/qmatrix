@@ -1,5 +1,5 @@
-%global richname QtOlm
-%global libname lib%{richname}
+%global appname QtOlm
+%global libname lib%{appname}
 
 %global commit0 f2d8e235a4af0625fdedaaf727fef5d51293bf1b
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
@@ -41,7 +41,7 @@ mkdir -p %{_target_platform}
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{richname}" \
+    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}" \
     ..
 popd
 %ninja_build -C %{_target_platform}
@@ -59,9 +59,9 @@ popd
 %{_libdir}/%{libname}.so.0*
 
 %files devel
-%{_includedir}/%{richname}/
-%{_libdir}/cmake/%{richname}
-%{_libdir}/pkgconfig/%{richname}.pc
+%{_includedir}/%{appname}/
+%{_libdir}/cmake/%{appname}
+%{_libdir}/pkgconfig/%{appname}.pc
 %{_libdir}/%{libname}.so
 
 %changelog
