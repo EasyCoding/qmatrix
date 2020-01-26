@@ -60,7 +60,7 @@ popd
 
 %files devel
 %{_includedir}/%{appname}/
-%{_libdir}/cmake/%{appname}
+%{_libdir}/cmake/%{appname}/
 %{_libdir}/pkgconfig/%{appname}.pc
 %{_libdir}/%{libname}.so
 
