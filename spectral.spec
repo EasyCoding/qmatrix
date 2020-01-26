@@ -1,8 +1,8 @@
 %global appname Spectral
 
-%global commit0 04bb4b1e98aa1a7064a5783d05428f0bf2d214d4
+%global commit0 6af7befd11322ee3029ce7faa5744d953a3e0948
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20191020
+%global date 20200123
 
 # Git revision of SortFilterProxyModel...
 %global commit1 770789ee484abf69c230cbf1b64f39823e79a181
@@ -11,18 +11,12 @@
 Name: spectral
 Summary: A glossy cross-platform Matrix client
 Version: 0
-Release: 5.%{date}git%{shortcommit0}%{?dist}
+Release: 6.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
-URL: https://gitlab.com/b0/%{name}
+URL: https://gitlab.com/spectral-im/%{name}
 Source0: %{url}/-/archive/%{commit0}.tar.gz/%{name}-%{shortcommit0}.tar.gz
 Source1: https://github.com/oKcerG/SortFilterProxyModel/archive/%{commit1}.tar.gz#/SortFilterProxyModel-%{shortcommit1}.tar.gz
-
-# https://gitlab.com/b0/spectral/merge_requests/66
-Patch0: spectral-qtquick2-linkage.patch
-
-# https://gitlab.com/b0/spectral/merge_requests/67
-Patch1: spectral-launcher-icon.patch
 
 BuildRequires: cmake(Olm)
 BuildRequires: cmake(QtOlm)
@@ -94,5 +88,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
-* Fri Oct 25 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-5.20191020git04bb4b1
+* Sun Jan 26 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-6.20200123git6af7bef
 - Updated to latest Git snapshot.
