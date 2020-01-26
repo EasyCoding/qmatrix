@@ -9,7 +9,6 @@
 %global shortcommit1 %(c=%{commit1}; echo ${c:0:7})
 
 Name: spectral
-Summary: A glossy cross-platform Matrix client
 Version: 0
 Release: 6.%{date}git%{shortcommit0}%{?dist}
 
@@ -17,8 +16,9 @@ Release: 6.%{date}git%{shortcommit0}%{?dist}
 # SortFilterProxyModel - MIT
 License: GPLv3+ and MIT
 URL: https://gitlab.com/spectral-im/%{name}
-Source0: %{url}/-/archive/%{commit0}.tar.gz/%{name}-%{shortcommit0}.tar.gz
-Source1: https://github.com/oKcerG/SortFilterProxyModel/archive/%{commit1}.tar.gz#/SortFilterProxyModel-%{shortcommit1}.tar.gz
+Summary: Glossy cross-platform Matrix client
+Source0: %{url}/-/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
+Source1: https://github.com/oKcerG/SortFilterProxyModel/archive/%{commit1}/SortFilterProxyModel-%{shortcommit1}.tar.gz
 
 BuildRequires: cmake(Olm)
 BuildRequires: cmake(QtOlm)
