@@ -40,6 +40,7 @@ mkdir -p %{_target_platform}
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/qtolm" \
     ..
 popd
 %ninja_build -C %{_target_platform}
@@ -54,10 +55,10 @@ popd
 
 %files
 %license LICENSE
-%{_libdir}/%{libname}.so.*
+%{_libdir}/%{libname}.so.0*
 
 %files devel
-%{_includedir}/*.h
+%{_includedir}/qtolm/
 %{_libdir}/cmake/QtOlm
 %{_libdir}/pkgconfig/QtOlm.pc
 %{_libdir}/%{libname}.so
