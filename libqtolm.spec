@@ -7,7 +7,7 @@
 Name: libqtolm
 Summary: A Qt wrapper for libolm
 Version: 0
-Release: 3.%{date}git%{shortcommit0}%{?dist}
+Release: 4.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://gitlab.com/b0/libqtolm
@@ -63,5 +63,5 @@ popd
 %{_libdir}/%{libname}.so
 
 %changelog
-* Fri Oct 25 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 0-3.20190930gitf2d8e23
+* Sun Jan 26 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-4.20190930gitf2d8e23
 - Updated to latest Git snapshot.
