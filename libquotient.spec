@@ -46,12 +46,14 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %prep
 %autosetup -n %{libname}-%{commit0}
 mkdir -p %{_target_platform}
+rm -rf 3rdparty
 
 %build
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DQUOTIENT_INSTALL_EXAMPLE=OFF \
+    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}" \
     ..
 popd
 %ninja_build -C %{_target_platform}
@@ -68,10 +70,10 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %files
 %license COPYING
 %doc README.md CONTRIBUTING.md SECURITY.md
-%{_libdir}/%{libname}.so.*
+%{_libdir}/%{libname}.so.0*
 
 %files devel
-%{_includedir}/*
+%{_includedir}/%{appname}/
 %{_libdir}/pkgconfig/%{appname}.pc
 %{_libdir}/cmake/%{appname}
 %{_libdir}/%{libname}.so
