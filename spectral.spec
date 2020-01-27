@@ -50,6 +50,9 @@ Recommends: google-noto-emoji-fonts
 Recommends: google-noto-sans-fonts
 Recommends: google-roboto-fonts
 
+# libquotient is not available on s390x.
+ExcludeArch: s390x
+
 %description
 Spectral is a glossy cross-platform client for Matrix, the decentralized
 communication protocol for instant messaging.

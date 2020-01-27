@@ -28,6 +28,9 @@ BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
 
+# It looks like Qt is broken on s390x. Linkage failure with QByteArray.
+ExcludeArch: s390x
+
 %description
 The Quotient project aims to produce a Qt5-based SDK to develop applications
 for Matrix. libQuotient is a library that enables client applications. It is
