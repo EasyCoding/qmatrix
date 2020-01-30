@@ -7,7 +7,7 @@
 
 Name: libqtolm
 Version: 0
-Release: 4.%{date}git%{shortcommit0}%{?dist}
+Release: 5.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv3+
 URL: https://gitlab.com/b0/libqtolm
@@ -65,5 +65,8 @@ popd
 %{_libdir}/%{libname}.so
 
 %changelog
+* Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0-5.20190930gitf2d8e23
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Sun Jan 26 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-4.20190930gitf2d8e23
 - Updated to latest Git snapshot.

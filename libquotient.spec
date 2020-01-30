@@ -7,7 +7,7 @@
 
 Name: libquotient
 Version: 0.6.0
-Release: 0.2.%{date}git%{shortcommit0}%{?dist}
+Release: 0.3.%{date}git%{shortcommit0}%{?dist}
 
 License: LGPLv2+
 URL: https://github.com/quotient-im/%{libname}
@@ -80,5 +80,8 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
+* Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.0-0.3.20200121gite3a5b3a
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Sun Jan 26 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.0-0.2.20200121gite3a5b3a
 - Updated to version 0.6.0-git.
