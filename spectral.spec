@@ -1,8 +1,8 @@
 %global appname Spectral
 
-%global commit0 6af7befd11322ee3029ce7faa5744d953a3e0948
+%global commit0 29e6933b4f5e74670df9d7ce10c1d7a6d7e45a69
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20200123
+%global date 20200209
 
 # Git revision of SortFilterProxyModel...
 %global commit1 770789ee484abf69c230cbf1b64f39823e79a181
@@ -10,7 +10,7 @@
 
 Name: spectral
 Version: 0
-Release: 7.%{date}git%{shortcommit0}%{?dist}
+Release: 8.%{date}git%{shortcommit0}%{?dist}
 
 # Spectral - GPLv3+
 # SortFilterProxyModel - MIT
@@ -93,6 +93,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Sat Mar 07 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-8.20200209git29e6933
+- Updated to latest Git snapshot.
+
 * Fri Jan 31 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0-7.20200123git6af7bef
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
