@@ -1,8 +1,8 @@
 %global appname Spectral
 
-%global commit0 29e6933b4f5e74670df9d7ce10c1d7a6d7e45a69
+%global commit0 ca91709c9bb0c0238132689f424855028b89d243
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20200209
+%global date 20200607
 
 # Git revision of SortFilterProxyModel...
 %global commit1 770789ee484abf69c230cbf1b64f39823e79a181
@@ -10,7 +10,7 @@
 
 Name: spectral
 Version: 0
-Release: 8.%{date}git%{shortcommit0}%{?dist}
+Release: 9.%{date}git%{shortcommit0}%{?dist}
 
 # Spectral - GPLv3+
 # SortFilterProxyModel - MIT
@@ -44,6 +44,7 @@ BuildRequires: gcc
 
 Provides: bundled(SortFilterProxyModel) = 0.1.1~git%{shortcommit1}
 Requires: hicolor-icon-theme
+Requires: qt5-qtquickcontrols2%{?_isa}
 
 Recommends: google-noto-emoji-color-fonts
 Recommends: google-noto-emoji-fonts
@@ -90,6 +91,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Tue Jun 30 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-9.20200607gitca91709
+- Updated to latest Git snapshot.
+
 * Sat Mar 07 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-8.20200209git29e6933
 - Updated to latest Git snapshot.
 
