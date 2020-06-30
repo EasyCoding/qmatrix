@@ -1,18 +1,15 @@
 %global appname Quotient
 %global libname lib%{appname}
-
-%global commit0 9bcf0cbc3d690663d37d1737173ab5088fed152f
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20200207
+%define gitversion beta2
 
 Name: libquotient
-Version: 0.6.0
-Release: 0.4.%{date}git%{shortcommit0}%{?dist}
+Version: 0.6
+Release: 0.5.%{gitversion}%{?dist}
 
 License: LGPLv2+
 URL: https://github.com/quotient-im/%{libname}
 Summary: Qt5 library to write cross-platform clients for Matrix
-Source0: %{url}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
+Source0: %{url}/archive/%{version}-%{gitversion}/%{name}-%{version}-%{gitversion}.tar.gz
 
 BuildRequires: cmake(Olm)
 BuildRequires: cmake(QtOlm)
@@ -42,7 +39,7 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n %{libname}-%{commit0}
+%autosetup -n %{libname}-%{version}-%{gitversion}
 mkdir -p %{_target_platform}
 rm -rf 3rdparty
 
@@ -50,7 +47,9 @@ rm -rf 3rdparty
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DQUOTIENT_INSTALL_EXAMPLE=OFF \
+    -DQuotient_INSTALL_TESTS:BOOL=OFF \
+    -DQuotient_INSTALL_EXAMPLE:BOOL=OFF \
+    -DQuotient_ENABLE_E2EE:BOOL=ON \
     -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}" \
     ..
 popd
@@ -77,6 +76,9 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
+* Tue Jun 30 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6-0.5.beta2
+- Updated to version 0.6-beta2.
+
 * Sat Mar 07 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.0-0.4.20200207git9bcf0cb
 - Updated to latest Git snapshot.
 
