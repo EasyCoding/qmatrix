@@ -1,15 +1,17 @@
 %global appname Quotient
 %global libname lib%{appname}
+
+%define tagversion 0.6
 %define gitversion beta2
 
 Name: libquotient
-Version: 0.6
+Version: 0.6.0
 Release: 0.5.%{gitversion}%{?dist}
 
 License: LGPLv2+
 URL: https://github.com/quotient-im/%{libname}
 Summary: Qt5 library to write cross-platform clients for Matrix
-Source0: %{url}/archive/%{version}-%{gitversion}/%{name}-%{version}-%{gitversion}.tar.gz
+Source0: %{url}/archive/%{tagversion}-%{gitversion}/%{name}-%{version}-%{gitversion}.tar.gz
 
 BuildRequires: cmake(Olm)
 BuildRequires: cmake(QtOlm)
@@ -39,7 +41,7 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n %{libname}-%{version}-%{gitversion}
+%autosetup -n %{libname}-%{tagversion}-%{gitversion}
 mkdir -p %{_target_platform}
 rm -rf 3rdparty
 
@@ -76,7 +78,7 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
-* Tue Jun 30 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6-0.5.beta2
+* Tue Jun 30 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.0-0.5.beta2
 - Updated to version 0.6-beta2.
 
 * Sat Mar 07 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.0-0.4.20200207git9bcf0cb
