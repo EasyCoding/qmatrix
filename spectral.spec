@@ -91,8 +91,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
-* Tue Jun 30 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-9.20200607gitca91709
-- Updated to latest Git snapshot.
+* Sun Jul 12 2020 Dan Čermák <dan.cermak@cgc-instruments.com> - 0-9.20200209git29e6933
+- Add missing runtime dependency qt5-qtquickcontrols2 (rhbz#1842184)
 
 * Sat Mar 07 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-8.20200209git29e6933
 - Updated to latest Git snapshot.
