@@ -1,17 +1,16 @@
+%undefine __cmake_in_source_build
+
 %global appname Quotient
 %global libname lib%{appname}
 
-%define tagversion 0.6
-%define gitversion beta2
-
 Name: libquotient
 Version: 0.6.0
-Release: 0.5.%{gitversion}%{?dist}
+Release: 1%{?dist}
 
 License: LGPLv2+
 URL: https://github.com/quotient-im/%{libname}
 Summary: Qt5 library to write cross-platform clients for Matrix
-Source0: %{url}/archive/%{tagversion}-%{gitversion}/%{name}-%{version}-%{gitversion}.tar.gz
+Source0: %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: cmake(Olm)
 BuildRequires: cmake(QtOlm)
@@ -41,29 +40,23 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n %{libname}-%{tagversion}-%{gitversion}
-mkdir -p %{_target_platform}
+%autosetup -n %{libname}-%{version}
 rm -rf 3rdparty
 
 %build
-pushd %{_target_platform}
-    %cmake -G Ninja \
+%cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DQuotient_INSTALL_TESTS:BOOL=OFF \
     -DQuotient_INSTALL_EXAMPLE:BOOL=OFF \
     -DQuotient_ENABLE_E2EE:BOOL=ON \
-    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}" \
-    ..
-popd
-%ninja_build -C %{_target_platform}
+    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}"
+%cmake_build
 
 %check
-pushd %{_target_platform}
-    ctest --output-on-failure
-popd
+%ctest
 
 %install
-%ninja_install -C %{_target_platform}
+%cmake_install
 rm -rf %{buildroot}%{_datadir}/ndk-modules
 
 %files
@@ -78,8 +71,8 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
-* Tue Jun 30 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.0-0.5.beta2
-- Updated to version 0.6-beta2.
+* Wed Jul 29 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.0-1
+- Updated to version 0.6.0.
 
 * Sat Mar 07 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.0-0.4.20200207git9bcf0cb
 - Updated to latest Git snapshot.

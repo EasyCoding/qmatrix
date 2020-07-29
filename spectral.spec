@@ -1,8 +1,9 @@
+%undefine __cmake_in_source_build
 %global appname Spectral
 
-%global commit0 ca91709c9bb0c0238132689f424855028b89d243
+%global commit0 d6009479a5cea4a9b5abcfacaa205eb9c8bf851c
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20200607
+%global date 20200729
 
 # Git revision of SortFilterProxyModel...
 %global commit1 770789ee484abf69c230cbf1b64f39823e79a181
@@ -10,7 +11,7 @@
 
 Name: spectral
 Version: 0
-Release: 9.%{date}git%{shortcommit0}%{?dist}
+Release: 11.%{date}git%{shortcommit0}%{?dist}
 
 # Spectral - GPLv3+
 # SortFilterProxyModel - MIT
@@ -57,7 +58,6 @@ communication protocol for instant messaging.
 
 %prep
 %autosetup -n %{name}-%{commit0} -p1
-mkdir -p %{_target_platform}
 
 # Unpacking SortFilterProxyModel...
 pushd include
@@ -67,20 +67,17 @@ pushd include
 popd
 
 %build
-pushd %{_target_platform}
-    %cmake -G Ninja \
+%cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DGIT_SHA1=%{commit0} \
-    ..
-popd
-%ninja_build -C %{_target_platform}
+    -DGIT_SHA1=%{commit0}
+%cmake_build
 
 %check
 appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.appdata.xml
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %install
-%ninja_install -C %{_target_platform}
+%cmake_install
 
 %files
 %license LICENSE
@@ -91,6 +88,12 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Wed Jul 29 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-11.20200729gitd600947
+- Updated to latest Git snapshot.
+
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0-10.20200209git29e6933
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Sun Jul 12 2020 Dan Čermák <dan.cermak@cgc-instruments.com> - 0-9.20200209git29e6933
 - Add missing runtime dependency qt5-qtquickcontrols2 (rhbz#1842184)
 

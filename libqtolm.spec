@@ -1,3 +1,4 @@
+%undefine __cmake_in_source_build
 %global appname QtOlm
 %global libname lib%{appname}
 
@@ -31,24 +32,18 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 
 %prep
 %autosetup -n %{name}-v%{version}
-mkdir -p %{_target_platform}
 
 %build
-pushd %{_target_platform}
-    %cmake -G Ninja \
+%cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}" \
-    ..
-popd
-%ninja_build -C %{_target_platform}
+    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}"
+%cmake_build
 
 %check
-pushd %{_target_platform}
-    ctest --output-on-failure
-popd
+%ctest
 
 %install
-%ninja_install -C %{_target_platform}
+%cmake_install
 
 %files
 %license LICENSE
