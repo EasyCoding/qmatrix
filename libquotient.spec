@@ -26,6 +26,11 @@ BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
 
+%if 0%{?fedora} && 0%{?fedora} >= 34
+Provides: libqmatrixclient = %{?epoch:%{epoch}:}%{version}-%{release}
+Obsoletes: libqmatrixclient < %{?epoch:%{epoch}:}%{version}-%{release}
+%endif
+
 %description
 The Quotient project aims to produce a Qt5-based SDK to develop applications
 for Matrix. libQuotient is a library that enables client applications. It is
@@ -35,6 +40,11 @@ older use the previous name - libQMatrixClient.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
+
+%if 0%{?fedora} && 0%{?fedora} >= 34
+Provides: libqmatrixclient-devel = %{?epoch:%{epoch}:}%{version}-%{release}
+Obsoletes: libqmatrixclient-devel < %{?epoch:%{epoch}:}%{version}-%{release}
+%endif
 
 %description devel
 %{summary}.
