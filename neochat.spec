@@ -49,6 +49,7 @@ BuildRequires: gcc
 
 Requires: hicolor-icon-theme
 Requires: kf5-kirigami2%{?_isa}
+Requires: kf5-kitemmodels%{?_isa}
 Requires: qt5-qtquickcontrols2%{?_isa}
 
 %description
