@@ -48,6 +48,7 @@ BuildRequires: gcc
 %{?_qt5:Requires: %{_qt5}%{?_isa} = %{_qt5_version}}
 
 Requires: hicolor-icon-theme
+Requires: kf5-kirigami2%{?_isa}
 Requires: qt5-qtquickcontrols2%{?_isa}
 
 %description
