@@ -11,7 +11,7 @@
 
 Name: spectral
 Version: 0
-Release: 12.%{date}git%{shortcommit0}%{?dist}
+Release: 13.%{date}git%{shortcommit0}%{?dist}
 
 # Spectral - GPLv3+
 # SortFilterProxyModel - MIT
@@ -42,9 +42,6 @@ BuildRequires: ninja-build
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
-
-# Require exact version of Qt due to compiled QML usage.
-%{?_qt5:Requires: %{_qt5}%{?_isa} = %{_qt5_version}}
 
 Provides: bundled(SortFilterProxyModel) = 0.1.1~git%{shortcommit1}
 Requires: hicolor-icon-theme
@@ -91,6 +88,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Mon Nov 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-13.20200729gitd600947
+- Rebuilt due to Qt 5.15.2 update.
+
 * Sat Oct 17 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-12.20200729gitd600947
 - Rebuilt due to Qt update.
 
