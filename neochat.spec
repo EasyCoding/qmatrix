@@ -1,51 +1,48 @@
 %undefine __cmake_in_source_build
 
-%global commit0 4dedb87efa46bd9bbdc4606d30772b3a189a3969
+%global commit0 5d4e787a388e197e775d0ec8d88d9048493c5864
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20201122
+%global date 20201123
 
 Name: neochat
-Version: 0
-Release: 1.%{date}git%{shortcommit0}%{?dist}
+Version: 0.1.0
+Release: 0.1.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv2 and GPLv2+ and GPLv3 and GPLv3+ and BSD
 URL: https://invent.kde.org/network/%{name}
 Summary: Client for matrix, the decentralized communication protocol
 Source0: %{url}/-/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 
+BuildRequires: cmake(Qt5Concurrent)
+BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5DBus)
+BuildRequires: cmake(Qt5Keychain)
+BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires: cmake(Qt5Multimedia)
+BuildRequires: cmake(Qt5Network)
+BuildRequires: cmake(Qt5QuickControls2)
+BuildRequires: cmake(Qt5Svg)
+BuildRequires: cmake(Qt5Widgets)
+
+BuildRequires: cmake(KF5Config)
+BuildRequires: cmake(KF5CoreAddons)
+BuildRequires: cmake(KF5I18n)
+BuildRequires: cmake(KF5Kirigami2)
+BuildRequires: cmake(KF5Notifications)
+
 BuildRequires: cmake(Olm)
 BuildRequires: cmake(QtOlm)
-BuildRequires: cmake(Qt5Svg)
-BuildRequires: cmake(Qt5DBus)
-BuildRequires: cmake(Qt5Core)
-BuildRequires: cmake(Qt5Widgets)
-BuildRequires: cmake(Qt5Network)
-BuildRequires: cmake(Qt5Keychain)
-BuildRequires: cmake(Qt5Multimedia)
-BuildRequires: cmake(Qt5Concurrent)
-BuildRequires: cmake(Qt5LinguistTools)
-BuildRequires: cmake(Qt5QuickControls2)
-
-BuildRequires: cmake(KF5CoreAddons)
-BuildRequires: cmake(KF5Kirigami2)
-BuildRequires: cmake(KF5I18n)
-BuildRequires: cmake(KF5Notifications)
-BuildRequires: cmake(KF5Config)
-
-BuildRequires: cmake(Quotient) >= 0.6.0
+BuildRequires: cmake(Quotient)
 BuildRequires: pkgconfig(libcmark)
 
-BuildRequires: extra-cmake-modules
-BuildRequires: desktop-file-utils
-BuildRequires: libappstream-glib
-BuildRequires: kf5-rpm-macros
-BuildRequires: ninja-build
-BuildRequires: gcc-c++
 BuildRequires: cmake
+BuildRequires: desktop-file-utils
+BuildRequires: extra-cmake-modules
 BuildRequires: gcc
-
-# Require exact version of Qt due to compiled QML usage.
-%{?_qt5:Requires: %{_qt5}%{?_isa} = %{_qt5_version}}
+BuildRequires: gcc-c++
+BuildRequires: kf5-rpm-macros
+BuildRequires: libappstream-glib
+BuildRequires: ninja-build
 
 Requires: hicolor-icon-theme
 Requires: kf5-kirigami2%{?_isa}
@@ -83,5 +80,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_kf5_datadir}/knotifications5/%{name}.notifyrc
 
 %changelog
-* Sun Nov 22 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-1.20201122git4dedb87
+* Mon Nov 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.1.0-0.1.20201123git5d4e787
 - Initial SPEC release.
