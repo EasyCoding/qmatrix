@@ -26,6 +26,7 @@ BuildRequires: cmake(Qt5Widgets)
 
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5CoreAddons)
+BuildRequires: cmake(KF5DBusAddons)
 BuildRequires: cmake(KF5I18n)
 BuildRequires: cmake(KF5Kirigami2)
 BuildRequires: cmake(KF5Notifications)
@@ -56,7 +57,7 @@ notably Kirigami, KConfig and KI18n.
 
 %prep
 %autosetup -n %{name}-%{commit0} -p1
-sed -e 's/5.76.0/5.75.0/g' -i CMakeLists.txt
+sed -e 's/5.76.0/5.75.0/g' -e 's/Quotient 0.7/Quotient 0.6/g' -i CMakeLists.txt
 
 %build
 %cmake_kf5 -G Ninja \
