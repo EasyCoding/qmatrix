@@ -1,12 +1,12 @@
 %undefine __cmake_in_source_build
 
-%global commit0 5d4e787a388e197e775d0ec8d88d9048493c5864
+%global commit0 54b07737c0f93190f166ea9692a44d0e82e8c443
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20201123
+%global date 20201214
 
 Name: neochat
 Version: 0.1.0
-Release: 0.1.%{date}git%{shortcommit0}%{?dist}
+Release: 0.2.%{date}git%{shortcommit0}%{?dist}
 
 License: GPLv2 and GPLv2+ and GPLv3 and GPLv3+ and BSD
 URL: https://invent.kde.org/network/%{name}
@@ -80,5 +80,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_kf5_datadir}/knotifications5/%{name}.notifyrc
 
 %changelog
+* Tue Dec 15 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.1.0-0.2.20201214git54b0773
+- Updated to the latest Git snapshot.
+
 * Mon Nov 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.1.0-0.1.20201123git5d4e787
 - Initial SPEC release.
