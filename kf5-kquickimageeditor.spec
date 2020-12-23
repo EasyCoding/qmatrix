@@ -23,7 +23,8 @@ BuildRequires: kf5-rpm-macros
 BuildRequires: ninja-build
 
 %description
-Special Qt wrapper for libolm library.
+KQuickImageEditor is a set of QtQuick components providing basic image editing
+capabilities.
 
 %package devel
 Summary: Development files for %{name}
