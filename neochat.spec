@@ -64,12 +64,13 @@ sed -e 's/5.76.0/5.75.0/g' -i CMakeLists.txt
 
 %install
 %cmake_install
+%find_lang %{name} --with-qt
 
 %check
 appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.appdata.xml
 desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
-%files
+%files -f %{name}.lang
 %license LICENSES/*
 %doc README.md
 %{_bindir}/%{name}
