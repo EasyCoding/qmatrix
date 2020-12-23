@@ -1,16 +1,24 @@
 %undefine __cmake_in_source_build
-%global framework kquickimageeditor
 %global appname KQuickImageEditor
-%global libname lib%{framework}
+%global libname lib%{name}
 
-Name: kf5-%{framework}
-Version: 0.1
+Name: kquickimageeditor
+Version: 0.1.2
 Release: 1%{?dist}
 
 License: LGPLv2+ and BSD and CC0
-URL: https://invent.kde.org/libraries/%{framework}
+URL: https://invent.kde.org/libraries/%{name}
 Summary: QtQuick components providing basic image editing capabilities
-Source0: https://download.kde.org/stable/%{framework}/%{version}/%{framework}-%{version}.tar.xz
+
+%global majmin %(echo %{version} | cut -d. -f1-2)
+%global revision %(echo %{version} | cut -d. -f3)
+%if %{revision} >= 50
+%global stable unstable
+%else
+%global stable stable
+%endif
+
+Source0: https://download.kde.org/%{stable}/%{name}/%{majmin}/%{name}-%{version}.tar.xz
 
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Quick)
@@ -21,6 +29,8 @@ BuildRequires: gcc
 BuildRequires: gcc-c++
 BuildRequires: kf5-rpm-macros
 BuildRequires: ninja-build
+
+Requires: kf5-filesystem >= %{majmin}
 
 %description
 KQuickImageEditor is a set of QtQuick components providing basic image editing
@@ -34,8 +44,7 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %{summary}.
 
 %prep
-%autosetup -n %{framework}-%{version} -p1
-echo 'set_property(TARGET kquickimageeditorplugin PROPERTY SOVERSION 1)' >> src/CMakeLists.txt
+%autosetup -p1
 
 %build
 %cmake_kf5 -G Ninja \
@@ -48,14 +57,12 @@ echo 'set_property(TARGET kquickimageeditorplugin PROPERTY SOVERSION 1)' >> src/
 %files
 %doc README.md
 %license LICENSES/*
-%{_kf5_libdir}/%{libname}*.so.1*
-%{_kf5_qmldir}/org/kde/%{framework}/
+%{_kf5_qmldir}/org/kde/%{name}/
 
 %files devel
 %{_kf5_libdir}/cmake/%{appname}/
-%{_kf5_libdir}/%{libname}*.so
 %{_kf5_archdatadir}/mkspecs/modules/qt_%{appname}.pri
 
 %changelog
-* Wed Dec 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.1-1
+* Wed Dec 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.1.2-1
 - Initial SPEC release.
