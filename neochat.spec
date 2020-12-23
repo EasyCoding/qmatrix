@@ -1,17 +1,13 @@
 %undefine __cmake_in_source_build
 
-%global commit0 54b07737c0f93190f166ea9692a44d0e82e8c443
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20201214
-
 Name: neochat
-Version: 0.1.0
-Release: 0.2.%{date}git%{shortcommit0}%{?dist}
+Version: 1.0
+Release: 1%{?dist}
 
 License: GPLv2 and GPLv2+ and GPLv3 and GPLv3+ and BSD
 URL: https://invent.kde.org/network/%{name}
 Summary: Client for matrix, the decentralized communication protocol
-Source0: %{url}/-/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
+Source0: https://download.kde.org/stable/neochat/%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5Core)
@@ -56,8 +52,8 @@ instant messaging. It is a fork of Spectral, using KDE frameworks, most
 notably Kirigami, KConfig and KI18n.
 
 %prep
-%autosetup -n %{name}-%{commit0} -p1
-sed -e 's/5.76.0/5.75.0/g' -e 's/Quotient 0.7/Quotient 0.6/g' -i CMakeLists.txt
+%autosetup -p1
+sed -e 's/5.76.0/5.75.0/g' -i CMakeLists.txt
 
 %build
 %cmake_kf5 -G Ninja \
@@ -81,6 +77,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_kf5_datadir}/knotifications5/%{name}.notifyrc
 
 %changelog
+* Wed Dec 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.0-1
+- Updated to version 1.0.
+
 * Tue Dec 15 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.1.0-0.2.20201214git54b0773
 - Updated to the latest Git snapshot.
 
