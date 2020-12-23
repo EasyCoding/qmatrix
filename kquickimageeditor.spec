@@ -30,7 +30,7 @@ BuildRequires: gcc-c++
 BuildRequires: kf5-rpm-macros
 BuildRequires: ninja-build
 
-Requires: kf5-filesystem >= %{majmin}
+Requires: kf5-filesystem
 
 %description
 KQuickImageEditor is a set of QtQuick components providing basic image editing
