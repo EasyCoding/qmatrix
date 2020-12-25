@@ -4,7 +4,7 @@
 %global libname lib%{appname}
 
 Name: libquotient
-Version: 0.6.2
+Version: 0.6.3
 Release: 1%{?dist}
 
 License: LGPLv2+
@@ -81,6 +81,9 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
+* Fri Dec 25 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.3-1
+- Updated to version 0.6.3.
+
 * Sat Oct 31 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.2-1
 - Updated to version 0.6.2.
 
