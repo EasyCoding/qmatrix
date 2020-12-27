@@ -1,7 +1,7 @@
 %undefine __cmake_in_source_build
-
 %global appname Quotient
 %global libname lib%{appname}
+%bcond_with e2ee
 
 Name: libquotient
 Version: 0.6.3
@@ -12,8 +12,6 @@ URL: https://github.com/quotient-im/%{libname}
 Summary: Qt5 library to write cross-platform clients for Matrix
 Source0: %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires: cmake(Olm)
-BuildRequires: cmake(QtOlm)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Network)
@@ -25,6 +23,11 @@ BuildRequires: ninja-build
 BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
+
+%if %{with e2ee}
+BuildRequires: cmake(Olm)
+BuildRequires: cmake(QtOlm)
+%endif
 
 %if 0%{?fedora} && 0%{?fedora} >= 34
 Provides: libqmatrixclient = %{?epoch:%{epoch}:}%{version}-%{release}
@@ -56,9 +59,13 @@ rm -rf 3rdparty
 %build
 %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
+%if %{with e2ee}
+    -DQuotient_ENABLE_E2EE:BOOL=ON \
+%else
+    -DQuotient_ENABLE_E2EE:BOOL=OFF \
+%endif
     -DQuotient_INSTALL_TESTS:BOOL=OFF \
-    -DQuotient_INSTALL_EXAMPLE:BOOL=OFF \
-    -DQuotient_ENABLE_E2EE:BOOL=OFF
+    -DQuotient_INSTALL_EXAMPLE:BOOL=OFF
 %cmake_build
 
 %check
