@@ -58,8 +58,7 @@ rm -rf 3rdparty
     -DCMAKE_BUILD_TYPE=Release \
     -DQuotient_INSTALL_TESTS:BOOL=OFF \
     -DQuotient_INSTALL_EXAMPLE:BOOL=OFF \
-    -DQuotient_ENABLE_E2EE:BOOL=OFF \
-    -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}"
+    -DQuotient_ENABLE_E2EE:BOOL=OFF
 %cmake_build
 
 %check
