@@ -5,7 +5,7 @@
 
 Name: libquotient
 Version: 0.6.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 License: LGPLv2+
 URL: https://github.com/quotient-im/%{libname}
@@ -58,7 +58,7 @@ rm -rf 3rdparty
     -DCMAKE_BUILD_TYPE=Release \
     -DQuotient_INSTALL_TESTS:BOOL=OFF \
     -DQuotient_INSTALL_EXAMPLE:BOOL=OFF \
-    -DQuotient_ENABLE_E2EE:BOOL=ON \
+    -DQuotient_ENABLE_E2EE:BOOL=OFF \
     -DCMAKE_INSTALL_INCLUDEDIR:PATH="include/%{appname}"
 %cmake_build
 
@@ -81,6 +81,9 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
+* Sun Dec 27 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.3-2
+- Disabled E2EE support due to lots of crashes.
+
 * Fri Dec 25 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.3-1
 - Updated to version 0.6.3.
 
