@@ -1,7 +1,7 @@
 %undefine __cmake_in_source_build
 
 Name: neochat
-Version: 1.0
+Version: 1.0.1
 Release: 1%{?dist}
 
 License: GPLv2 and GPLv2+ and GPLv3 and GPLv3+ and BSD
@@ -80,6 +80,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_kf5_datadir}/knotifications5/%{name}.notifyrc
 
 %changelog
+* Wed Jan 13 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 1.0.1-1
+- Updated to version 1.0.1.
+
 * Wed Dec 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.0-1
 - Updated to version 1.0.
 
