@@ -4,8 +4,8 @@
 %bcond_with e2ee
 
 Name: libquotient
-Version: 0.6.3
-Release: 2%{?dist}
+Version: 0.6.4
+Release: 1%{?dist}
 
 License: LGPLv2+
 URL: https://github.com/quotient-im/%{libname}
@@ -87,6 +87,9 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
+* Sat Jan 16 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.4-1
+- Updated to version 0.6.4.
+
 * Sun Dec 27 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.3-2
 - Disabled E2EE support due to lots of crashes.
 
