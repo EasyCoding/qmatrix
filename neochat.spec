@@ -55,7 +55,6 @@ notably Kirigami, KConfig and KI18n.
 
 %prep
 %autosetup -p1
-sed -e 's/5.76.0/5.75.0/g' -i CMakeLists.txt
 
 %build
 %cmake_kf5 -G Ninja \
