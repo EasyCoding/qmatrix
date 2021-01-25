@@ -22,26 +22,26 @@ Source0: %{url}/-/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 Source1: https://github.com/oKcerG/SortFilterProxyModel/archive/%{commit1}/SortFilterProxyModel-%{shortcommit1}.tar.gz
 
 BuildRequires: cmake(Olm)
-BuildRequires: cmake(QtOlm)
-BuildRequires: cmake(Qt5Svg)
-BuildRequires: cmake(Qt5DBus)
-BuildRequires: cmake(Qt5Core)
-BuildRequires: cmake(Qt5Widgets)
-BuildRequires: cmake(Qt5Network)
-BuildRequires: cmake(Qt5Keychain)
-BuildRequires: cmake(Qt5Multimedia)
 BuildRequires: cmake(Qt5Concurrent)
+BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5DBus)
+BuildRequires: cmake(Qt5Keychain)
 BuildRequires: cmake(Qt5LinguistTools)
+BuildRequires: cmake(Qt5Multimedia)
+BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5QuickControls2)
+BuildRequires: cmake(Qt5Svg)
+BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(QtOlm)
 BuildRequires: cmake(Quotient) >= 0.6.0
 BuildRequires: pkgconfig(libcmark)
 
+BuildRequires: cmake
 BuildRequires: desktop-file-utils
+BuildRequires: gcc
+BuildRequires: gcc-c++
 BuildRequires: libappstream-glib
 BuildRequires: ninja-build
-BuildRequires: gcc-c++
-BuildRequires: cmake
-BuildRequires: gcc
 
 Provides: bundled(SortFilterProxyModel) = 0.1.1~git%{shortcommit1}
 Requires: hicolor-icon-theme
