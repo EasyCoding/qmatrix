@@ -1,9 +1,9 @@
 %undefine __cmake_in_source_build
 %global appname Spectral
 
-%global commit0 d6009479a5cea4a9b5abcfacaa205eb9c8bf851c
+%global commit0 fba0df09c870c63a813f335e75c8fa0924c0f16c
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20200729
+%global date 20201224
 
 # Git revision of SortFilterProxyModel...
 %global commit1 770789ee484abf69c230cbf1b64f39823e79a181
@@ -11,7 +11,7 @@
 
 Name: spectral
 Version: 0
-Release: 13.%{date}git%{shortcommit0}%{?dist}
+Release: 14.%{date}git%{shortcommit0}%{?dist}
 
 # Spectral - GPLv3+
 # SortFilterProxyModel - MIT
@@ -88,6 +88,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Mon Jan 25 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 0-14.20201224gitfba0df0
+- Updated to fba0df0 Git snapshot.
+
 * Mon Nov 23 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 0-13.20200729gitd600947
 - Rebuilt due to Qt 5.15.2 update.
 
