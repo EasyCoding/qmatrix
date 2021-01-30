@@ -11,7 +11,7 @@
 
 Name: spectral
 Version: 0
-Release: 14.%{date}git%{shortcommit0}%{?dist}
+Release: 15.%{date}git%{shortcommit0}%{?dist}
 
 # Spectral - GPLv3+
 # SortFilterProxyModel - MIT
@@ -88,6 +88,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_metainfodir}/*.appdata.xml
 
 %changelog
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0-15.20201224gitfba0df0
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Mon Jan 25 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 0-14.20201224gitfba0df0
 - Updated to fba0df0 Git snapshot.
 

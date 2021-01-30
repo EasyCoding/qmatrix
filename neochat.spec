@@ -2,7 +2,7 @@
 
 Name: neochat
 Version: 1.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 License: GPLv2 and GPLv2+ and GPLv3 and GPLv3+ and BSD
 URL: https://invent.kde.org/network/%{name}
@@ -79,6 +79,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_kf5_datadir}/knotifications5/%{name}.notifyrc
 
 %changelog
+* Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Wed Jan 13 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 1.0.1-1
 - Updated to version 1.0.1.
 
