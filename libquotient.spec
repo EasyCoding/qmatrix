@@ -4,8 +4,8 @@
 %bcond_with e2ee
 
 Name: libquotient
-Version: 0.6.4
-Release: 2%{?dist}
+Version: 0.6.5
+Release: 1%{?dist}
 
 License: LGPLv2+
 URL: https://github.com/quotient-im/%{libname}
@@ -87,6 +87,9 @@ rm -rf %{buildroot}%{_datadir}/ndk-modules
 %{_libdir}/%{libname}.so
 
 %changelog
+* Mon Feb 22 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 0.6.5-1
+- Updated to version 0.6.5.
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.6.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
