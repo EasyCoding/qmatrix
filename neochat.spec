@@ -1,16 +1,13 @@
 %undefine __cmake_in_source_build
 
 Name: neochat
-Version: 1.1.0
+Version: 1.1.1
 Release: 1%{?dist}
 
 License: GPLv2 and GPLv2+ and GPLv3 and GPLv3+ and BSD
 URL: https://invent.kde.org/network/%{name}
 Summary: Client for matrix, the decentralized communication protocol
 Source0: https://download.kde.org/stable/%{name}/%{version}/%{name}-%{version}.tar.xz
-
-# https://invent.kde.org/network/neochat/-/issues/275
-Patch100: %{name}-fix-includes.patch
 
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5Core)
@@ -82,6 +79,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_kf5_datadir}/knotifications5/%{name}.notifyrc
 
 %changelog
+* Tue Feb 23 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1.1-1
+- Updated to version 1.1.1.
+
 * Tue Feb 23 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 1.1.0-1
 - Updated to version 1.1.0.
 
