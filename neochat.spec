@@ -9,6 +9,9 @@ URL: https://invent.kde.org/network/%{name}
 Summary: Client for matrix, the decentralized communication protocol
 Source0: https://download.kde.org/stable/%{name}/%{version}/%{name}-%{version}.tar.xz
 
+# https://invent.kde.org/network/neochat/-/issues/275
+Patch100: %{name}-fix-includes.patch
+
 BuildRequires: cmake(Qt5Concurrent)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
